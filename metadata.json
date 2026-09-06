@@ -1,0 +1,6 @@
+{
+  "name": "Eximo.ai",
+  "description": "AI-powered assessment infrastructure platform for coaching institutes, schools, and educators.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,302 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: var(--bg-background);
+  --color-foreground: var(--text-primary);
+  --color-card: var(--bg-surface);
+  --color-card-foreground: var(--text-primary);
+  --color-surface: var(--bg-surface);
+  --color-surface-hover: var(--bg-surface-hover);
+  --color-surface-muted: var(--bg-surface-muted);
+  --color-surface-elevated: var(--bg-surface-elevated);
+  --color-surface-subtle: var(--bg-surface-subtle);
+  --color-border-primary: var(--border-primary);
+  --color-border-secondary: var(--border-secondary);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-input: var(--border-input);
+  --color-muted-text: var(--text-muted);
+  --color-secondary-text: var(--text-secondary);
+  --color-dim-text: var(--text-dim);
+  --color-input-bg: var(--bg-input);
+}
+
+:root {
+  --bg-background: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-hover: #f1f5f9;
+  --bg-surface-muted: #f8fafc;
+  --bg-surface-elevated: #ffffff;
+  --bg-surface-subtle: #f8fafc;
+  --border-primary: #e2e8f0;
+  --border-secondary: #f1f5f9;
+  --border-subtle: #f8fafc;
+  --border-input: #cbd5e1;
+  --text-primary: #09090b;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-dim: #94a3b8;
+  --bg-input: #ffffff;
+  color-scheme: light;
+}
+
+.dark {
+  --bg-background: #09090b;
+  --bg-surface: #121216;
+  --bg-surface-hover: #1f1f26;
+  --bg-surface-muted: #16161b;
+  --bg-surface-elevated: #181820;
+  --bg-surface-subtle: #141419;
+  --border-primary: #27272a;
+  --border-secondary: #1f1f23;
+  --border-subtle: #18181d;
+  --border-input: #3f3f46;
+  --text-primary: #f4f4f5;
+  --text-secondary: #d4d4d8;
+  --text-muted: #a1a1aa;
+  --text-dim: #71717a;
+  --bg-input: #16161b;
+  color-scheme: dark;
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--bg-background);
+  color: var(--text-primary);
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Semantic Theme Support Across Standard Utility Classes */
+.dark .bg-white {
+  background-color: var(--bg-surface);
+}
+
+.dark .bg-zinc-50 {
+  background-color: var(--bg-background);
+}
+
+.dark .bg-zinc-100 {
+  background-color: var(--bg-surface-hover);
+}
+
+.dark .bg-zinc-200 {
+  background-color: #27272a;
+}
+
+.dark .text-zinc-900 {
+  color: var(--text-primary);
+}
+
+.dark .text-zinc-800 {
+  color: #f4f4f5;
+}
+
+.dark .text-zinc-700 {
+  color: var(--text-secondary);
+}
+
+.dark .text-zinc-600 {
+  color: var(--text-muted);
+}
+
+.dark .text-zinc-500 {
+  color: var(--text-dim);
+}
+
+.dark .text-zinc-400 {
+  color: #9ca3af;
+}
+
+.dark .border-zinc-200 {
+  border-color: var(--border-primary);
+}
+
+.dark .border-zinc-100 {
+  border-color: var(--border-secondary);
+}
+
+.dark .border-zinc-300 {
+  border-color: var(--border-input);
+}
+
+.dark .divide-zinc-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--border-primary);
+}
+
+.dark .divide-zinc-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--border-secondary);
+}
+
+/* Interactive elements in dark mode */
+.dark .hover\:bg-zinc-50:hover {
+  background-color: var(--bg-surface-hover);
+}
+
+.dark .hover\:bg-zinc-100:hover {
+  background-color: #24242c;
+}
+
+.dark .hover\:border-zinc-300:hover {
+  border-color: #52525b;
+}
+
+/* Inputs, Selects, Textareas */
+.dark input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+.dark select,
+.dark textarea {
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  border-color: var(--border-input);
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: var(--text-dim);
+}
+
+.dark option {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+}
+
+/* Badges and Soft Highlights in Dark Mode */
+.dark .bg-indigo-50,
+.dark .bg-indigo-50\/60 {
+  background-color: rgba(79, 70, 229, 0.15);
+}
+.dark .border-indigo-200,
+.dark .border-indigo-200\/80 {
+  border-color: rgba(99, 102, 241, 0.35);
+}
+.dark .text-indigo-950,
+.dark .text-indigo-900,
+.dark .text-indigo-800 {
+  color: #c7d2fe;
+}
+.dark .text-indigo-700,
+.dark .text-indigo-600 {
+  color: #818cf8;
+}
+
+.dark .bg-emerald-50,
+.dark .bg-emerald-50\/60,
+.dark .bg-emerald-100 {
+  background-color: rgba(16, 185, 129, 0.15);
+}
+.dark .border-emerald-200,
+.dark .border-emerald-200\/80 {
+  border-color: rgba(16, 185, 129, 0.35);
+}
+.dark .text-emerald-950,
+.dark .text-emerald-900,
+.dark .text-emerald-800 {
+  color: #a7f3d0;
+}
+.dark .text-emerald-700,
+.dark .text-emerald-600 {
+  color: #34d399;
+}
+
+.dark .bg-amber-50,
+.dark .bg-amber-50\/60,
+.dark .bg-amber-100 {
+  background-color: rgba(245, 158, 11, 0.15);
+}
+.dark .border-amber-200,
+.dark .border-amber-200\/80 {
+  border-color: rgba(245, 158, 11, 0.35);
+}
+.dark .text-amber-950,
+.dark .text-amber-900,
+.dark .text-amber-800 {
+  color: #fde68a;
+}
+.dark .text-amber-700,
+.dark .text-amber-600 {
+  color: #fbbf24;
+}
+
+.dark .bg-rose-50,
+.dark .bg-rose-50\/60,
+.dark .bg-rose-100 {
+  background-color: rgba(244, 63, 94, 0.15);
+}
+.dark .border-rose-200,
+.dark .border-rose-200\/80 {
+  border-color: rgba(244, 63, 94, 0.35);
+}
+.dark .text-rose-950,
+.dark .text-rose-900,
+.dark .text-rose-800 {
+  color: #fecdd3;
+}
+.dark .text-rose-700,
+.dark .text-rose-600 {
+  color: #fb7185;
+}
+
+.dark .bg-blue-50,
+.dark .bg-blue-50\/60,
+.dark .bg-blue-100 {
+  background-color: rgba(59, 130, 246, 0.15);
+}
+.dark .border-blue-200,
+.dark .border-blue-200\/80 {
+  border-color: rgba(59, 130, 246, 0.35);
+}
+.dark .text-blue-950,
+.dark .text-blue-900,
+.dark .text-blue-800 {
+  color: #bfdbfe;
+}
+.dark .text-blue-700,
+.dark .text-blue-600 {
+  color: #60a5fa;
+}
+
+.dark .bg-purple-50,
+.dark .bg-purple-50\/60,
+.dark .bg-purple-100 {
+  background-color: rgba(168, 85, 247, 0.15);
+}
+.dark .border-purple-200,
+.dark .border-purple-200\/80 {
+  border-color: rgba(168, 85, 247, 0.35);
+}
+.dark .text-purple-950,
+.dark .text-purple-900,
+.dark .text-purple-800 {
+  color: #e9d5ff;
+}
+.dark .text-purple-700,
+.dark .text-purple-600 {
+  color: #c084fc;
+}
+
+/* Subtle shadows and borders in dark mode */
+.dark .shadow-2xs,
+.dark .shadow-xs,
+.dark .shadow-sm {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.37);
+}
+
+.dark .shadow-md,
+.dark .shadow-lg,
+.dark .shadow-xl {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+}
+
+/* Modals, popovers, and backdrops */
+.dark .bg-black\/50,
+.dark .bg-black\/60 {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* Preserve Physical Paper Print View */
+@media print {
+  body, .bg-white, [data-printable="true"] {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+}
